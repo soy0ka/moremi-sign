@@ -4,7 +4,7 @@ import http from 'http'
 import app from './app'
 import { Logger } from './utils/logger'
 
-const port = process.env.PORT || 3000
+const port = process.env.ç || 3000
 const server = http.createServer(app)
 
 Logger.initialize('./')

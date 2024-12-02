@@ -2,7 +2,7 @@ import { engToKor } from '@/utils/hangul'
 import hangul from 'hangul-js'
 import sharp from 'sharp'
 
-const inputImagePath = './moremi.jpeg'
+const inputImagePath = './static/moremi.jpeg'
 
 function escapeHTML(text: string): string {
 	return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
@@ -44,7 +44,7 @@ export const getSignBuffer = async (text: string): Promise<Buffer> => {
 	const textOverlay = Buffer.from(
 		`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&amp;display=swap');
+        @import url('file://${__dirname}/static/NotoSansKR-Bold.otf');
         .noto-sans-kr {
           font-family: "Noto Sans KR", sans-serif;
           font-weight: 900;
