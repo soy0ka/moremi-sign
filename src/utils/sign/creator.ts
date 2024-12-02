@@ -44,9 +44,10 @@ export const getSignBuffer = async (text: string): Promise<Buffer> => {
 	const textOverlay = Buffer.from(
 		`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <style>
-        @import url('file://${__dirname}/static/NotoSansKR-Bold.otf');
+				font-family: "Noto Sans CJK Bold";
+        src: local("Noto Sans CJK KR"), url("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc") format("truetype");
         .noto-sans-kr {
-          font-family: "Noto Sans KR", sans-serif;
+          font-family: "Noto Sans CJK Bold", sans-serif;
           font-weight: 900;
           font-size: 126px;
           fill: #000000;
