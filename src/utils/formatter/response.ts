@@ -1,9 +1,4 @@
-import {
-	ApiResponse,
-	ApiResponseType,
-	CustomErrorCodeType,
-	CustomErrorMessage
-} from '@/types/response'
+import { ApiResponse, ApiResponseType, CustomErrorCodeType, CustomErrorMessage } from '@/types/response'
 
 function success(data: object): ApiResponse {
 	return {
