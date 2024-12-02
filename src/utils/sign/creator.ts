@@ -43,18 +43,20 @@ export const getSignBuffer = async (text: string): Promise<Buffer> => {
 	// SVG로 텍스트 오버레이 생성
 	const textOverlay = Buffer.from(
 		`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <style>
-				font-family: "Noto Sans CJK Bold";
-        src: local("Noto Sans CJK Bold"), url("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc") format("truetype");
-        .noto-sans-kr {
-          font-family: "Noto Sans CJK Bold", sans-serif;
-          font-weight: 900;
-          font-size: 126px;
-          fill: #000000;
-          text-anchor: middle;
-          dominant-baseline: middle;
-        }
-      </style>
+			<style>
+				@font-face {
+					font-family: "Noto Sans KR";
+					src: url("file:///${__dirname}/static/NotoSansKR-Bold.otf") format("opentype");
+				}
+				.noto-sans-kr {
+					font-family: "Noto Sans KR", sans-serif;
+					font-weight: 900;
+					font-size: 126px;
+					fill: #000000;
+					text-anchor: middle;
+					dominant-baseline: middle;
+				}
+			</style>
       <rect width="${width}" height="${height}" fill="none" />
       <text x="${width / 2}" y="${height - 120 - (line2 ? lineSpacing : 0)}" class="noto-sans-kr">
         ${line1}
