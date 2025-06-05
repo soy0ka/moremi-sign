@@ -65,18 +65,18 @@ export const getSignBuffer = async (text: string): Promise<Buffer> => {
         fill: #000000;
         text-anchor: middle;
         dominant-baseline: middle;
-        font-style: italic;
+        font-style: bold;
       }
       </style>
       <rect width="${width}" height="${height}" fill="none" />
-      <g transform="translate(${width / 2}, ${height - 110 - (line2 ? lineSpacing : line1.length < 3 ? -25 : 0)}) skewX(-3)">
+      <g transform="translate(${width / 2}, ${height - 110 - (line2 ? lineSpacing : line1.length < 3 ? -25 : 0)}) skewX(-6.5)">
         <text class="noto-sans-kr" text-anchor="middle">
           <tspan font-weight="900">${line1}</tspan>
         </text>
       </g>
       ${
 				line2
-					? `<g transform="translate(${width / 2}, ${height - 110 + lineSpacing}) skewX(-3)">
+					? `<g transform="translate(${width / 2}, ${height - 110 + lineSpacing}) skewX(-6.5)">
           <text class="noto-sans-kr" text-anchor="middle">
           <tspan font-weight="900">${line2}</tspan>
           </text>
